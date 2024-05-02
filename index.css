@@ -1,0 +1,157 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    background-color: #bcebcb;
+    
+}
+
+.main-container {
+    display: grid;
+    grid-template-areas:
+        ".... nav ...."
+        ".... hero ...."
+        ".... main ...."
+        ".... foot ....";
+}
+
+header{
+    grid-area: nav;
+    display: grid;
+    color: red;
+    background-color: #C8BFC7;
+    grid-template-columns: 1fr auto auto ;
+    padding: 1.25em 0.6em;
+    gap: 1em;
+    grid-template-areas:
+        "title home about";
+}
+
+.header-title{
+    grid-area: title;
+    font-size: 0.62rem;
+}
+.header-home{
+    grid-area: home;
+    font-size: 0.7rem;
+}
+.header-about{
+    grid-area: about;
+    font-size: 0.7rem;
+}
+
+.hero-section {
+    grid-area: hero;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(images/office-image.jpeg);
+    width: 100%;
+    color: #FFFFFF;
+    padding: 3em 0.6em 0.6em 0.9em ;
+    margin-bottom: 0.7em;
+}
+ 
+.container{
+   grid-area: main;
+   display: grid;
+   grid-template-columns: 1em 1fr 1em;
+   gap: 1em 0;
+}
+
+ .posts {
+    display: grid;
+    gap: 1em;  
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+} 
+
+article {
+    display: block;
+    margin:0 1em 1em 1em;
+}
+
+img {
+    width: 100%;
+}
+
+.article-info {
+    text-transform: uppercase;
+}
+
+.article-img {
+    margin-bottom: 1em;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    margin: 0.5em 0 0.35em 0;
+}
+
+.article-preview {
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+
+footer {
+    grid-area: foot;
+    text-align: center;
+    font-size: 0.62rem;
+    background-color: #C8BFC7;
+    color: black;
+    padding: 0.9em 0;
+} 
+
+@media(min-width:480px){
+    body{
+        background-color: #75c8f8;
+    }
+    .container{
+        gap: 0;
+    }
+}
+@media(min-width:1024px){
+    body{
+        background-color: #5aa9e6;
+        font-size: 25px;
+    }
+    .container{
+        grid-template-columns: 1fr 1fr 1fr ;
+        gap: 0.5em;
+        padding: 1.5em 1em;
+    }
+    header{
+        grid-template-columns: 1fr auto auto ;
+        background-color: rgb(53, 47, 47);
+        padding: 1em 0.6em;
+        gap: 1em;
+        grid-template-areas:
+            "title home about";
+    }
+    .header-title{
+        font-size: large;
+    }
+    .header-home,.header-about{
+        font-size: large;
+    }
+
+    .hero-section{
+        padding-top: 12em;
+    }
+    footer{
+        background-color: rgb(69, 60, 60);
+        color: white;
+        line-height: 1.5;
+    }
+
+}
+
